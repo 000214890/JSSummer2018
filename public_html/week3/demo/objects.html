@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+            // arr[0].Doors
+            var arr = [
+                {'Doors' : 3, 'Rooms' : 5 },
+                {'Doors' : 4, 'Rooms' : 3 },
+                {'Doors' : 7, 'Rooms' : 9 }
+            ]
+            // home.Doors
+            var home = {
+                'Bathrooms': {
+                    'FullBath' : 1,
+                    'halfBath' : 2
+                },
+                'Doors' : 5,
+                'Rooms' : '6'
+            }
+            
+            
+            for (let index in arr ) {
+                console.log(`Home ${index} has ${arr[index].Doors} doors and ${arr[index].Rooms} rooms.`)
+            }
+            
+            console.log(home.Bathrooms.FullBath)
+            
+            for (let key in home ) {
+                console.log(`Home variable has a key of '${key}' and a value of "${home[key]}".`)
+            }
+            
+            //Todo JSON functions for home var JSON.stringify() and JSON.parse()
+            
+            </script>
+        
+    </body>
+</html>

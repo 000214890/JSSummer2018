@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+        <script>
+            let p = document.createElement('p')
+            let textnode = document.createTextNode('Water');
+            p.appendChild(textnode)
+             p.setAttribute("id", 'customID');
+            /* Different behavior, Browser moves the element p from the body to the element
+             * unless we clone it .cloneNode(true)
+             */
+                        
+            document.body.appendChild(p)
+
+            let div = document.querySelector('div')
+            div.appendChild(p)
+            
+            
+            
+
+        </script>
+
+    </body>
+</html>

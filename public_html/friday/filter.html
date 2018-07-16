@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <script>
+            
+            let words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+            let result = words.filter(wordLimit);
+            
+            function wordLimit(word) {
+                return word.length > 6
+            }
+
+            console.log(result);
+            
+            
+            
+            
+            let arr = [5, 6, 13, 0, 1, 18, 23];
+            
+            let even = arr.filter(function(v) { return  v % 2 === 0}); 
+            console.log('even', even)
+            
+        </script>
+    </body>
+</html>

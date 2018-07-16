@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .comp {
+                cursor: pointer;
+                padding: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <p></p>
+
+        <script>
+            
+            var content = document.querySelector('div')
+            var myRequest = 'companies.json'
+            var data = {}
+            
+            fetch(myRequest).then(handleResponse)
+            .then(responseSuccess)
+            .catch(responseError);
+    
+            function handleResponse(response) {
+                let contentType = response.headers.get("content-type");
+               
+                if(contentType && contentType.includes("json")) {
+                  return response.json();
+                }
+                throw new TypeError("Oops, we haven't got JSON!");
+            }
+            
+            function responseSuccess(json) {
+                let html = '';
+                data = json
+                for ( let index in data) {
+                    html += `<div data-index="${index}" class="comp">${data[index].company}</div>`
+                }
+                content.innerHTML = html
+                
+                let divs = document.querySelectorAll('div.comp')
+                
+                for( let index=0; index < divs.length; index++ ) {
+                    divs[index].addEventListener('click', function(){
+                        console.log( this.dataset, this.dataset.index, this.getAttribute('data-index'));
+                        let currentDivIndex = this.dataset.index
+                        let registeredDate = new Date(data[currentDivIndex].registered).toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+                        document.querySelector('p').innerHTML = `${data[currentDivIndex].about} <p>${registeredDate}</p>`
+                    })
+                }
+            }
+            
+            function responseError(error) {
+                content.innerHTML = error;
+            }
+
+        </script>
+    </body>
+</html>

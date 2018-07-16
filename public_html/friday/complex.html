@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <script>
+            
+            
+            let complex = [
+                { person: 
+                        {   name: 'Gabriel',
+                            location: '02760'
+                        },
+                        color: 'red',
+                        fruit: 'banana',
+                        id: 10
+                },
+                { person: 
+                        {   name: 'Joe',
+                            location: '10453'
+                        },
+                        color: 'blue',
+                        fruit: 'apple',
+                        id: 20
+                },
+                { person: 
+                        {   name: 'Gina',
+                            location: '90210'
+                        },
+                        color: 'green',
+                        fruit: 'orange',
+                        id: 30
+                }
+            ]
+            
+            
+            // get just locations
+            let locations = complex.reduce( (accumulator, currentValue) => {
+                console.log(accumulator)
+                return accumulator.concat(currentValue.person.location)
+            }, [])
+            
+            console.log(locations)
+            
+            
+            //  get the locations, change them to intengers then filter out any that are not 5 numbers in length
+            let locationsFilter = complex.reduce( (accumulator, currentValue) => {              
+                return accumulator.concat(currentValue.person.location)
+            }, [])
+                .map(ZIP => ~~ZIP) // ~~ shortcut for parseInt
+                .filter(ZIP => ZIP.length === 5) // .toString()
+            
+            console.log(locationsFilter)
+            
+            
+        </script>
+    </body>
+</html>

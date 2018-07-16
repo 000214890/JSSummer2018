@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <script>
+                        
+            var areas = [
+                {city: 'Providence', state: 'RI'},
+                {city: 'Boston', state: 'MA'},
+                {city: 'New York', state: 'NY'}
+            ]
+            
+            
+            for(let index in areas){
+                console.log(areas[index])
+                console.log(`${areas[index].city}, ${areas[index].state}`)
+            }
+            
+            
+            areas.forEach(function(location) {
+                console.log(`${location.city}, ${location.state}`) 
+            })
+            
+        </script>
+    </body>
+</html>

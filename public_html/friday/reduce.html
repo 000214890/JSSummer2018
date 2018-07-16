@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <script>
+            
+          /*
+           * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+           * The reduce() method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
+           * arr.reduce(callback[, initialValue])
+           */ 
+          
+          let array1 = [1, 2, 3, 4, 5, 6];
+          
+          function reducer (accumulator, currentValue) {
+              return accumulator + currentValue
+          }
+          console.log(array1.reduce(reducer));
+          
+            
+        </script>
+    </body>
+</html>
