@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>For in</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>For Loops (For in)</div>
+         <script>
+            
+            let firstName = "Ivan";
+            let lastName = "Escalante";
+            let phoneNumber = "4010000000";
+            let color = "orange";
+            let info;
+            let infotext = "";
+            
+            
+            
+            let personInfo = { firstName, lastName, phoneNumber, color};
+            
+            for(info in personInfo)
+            {
+                infotext += personInfo[info] + " ";
+                
+            }
+            console.log(infotext);
+            
+        </script>
+    </body>
+</html>
