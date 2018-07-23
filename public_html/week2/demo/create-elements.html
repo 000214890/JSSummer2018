@@ -17,10 +17,10 @@
              * unless we clone it .cloneNode(true)
              */
                         
-            document.body.appendChild(p)
+            document.body.appendChild(p.cloneNode(true))
 
             let div = document.querySelector('div')
-            div.appendChild(p)
+            div.appendChild(p.cloneNode(true))
             
             
             
