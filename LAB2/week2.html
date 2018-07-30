@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Week 2 Files</title>
+<style type="text/css">
+	.border{border:1px solid black;}
+</style>
+</head>
+
+<body>
+   
+    <script type="text/javascript">
+    
+    
+    
+	//Use this Array of objects to complete the assignment.
+	let people =[
+		{first:"Jason", last:"Vorhees", credit:"Friday the 13th"},
+		{first:"Freddy", last:"Krueger", credit:"A Nightmare on Elm Street" },
+		{first:"Roger", last:"Rabbit", credit:"Who Framed Roger Rabbit" },
+		{first:"Kevin", last:"McCallister", credit:"Home Alone" },
+		{first:"Godzilla", last:"King of The Monsters", credit:"Godzilla" },
+		{first:"Buzz", last:"Lightyear", credit:"Toy Story" },
+		{first:"Marion", last:"Cobretti", credit:"Cobra" }
+            ]
+            
+        
+            people.forEach(function(item){
+             let tempDiv = document.createElement('div')
+             
+               //handles values with first name
+              
+               let p = document.createElement('p')
+               let textNode = document.createTextNode(item.first)
+               //handles values with last name
+               let pOne = document.createElement('p')
+               let textNodeOne = document.createTextNode(item.last)
+               //handles values with credit name
+               let pTwo = document.createElement('p')
+               let textNodeTwo = document.createTextNode(item.credit)
+               
+               //appending p to textNodes
+               p.appendChild(textNode)
+               pOne.appendChild(textNodeOne)
+               pTwo.appendChild(textNodeTwo)
+               
+               //appending temDiv to p
+               tempDiv.appendChild(p)
+               tempDiv.appendChild(pOne)
+               tempDiv.appendChild(pTwo)
+               
+               tempDiv.classList.add('border')
+               tempDiv.setAttribute("id",String(item))
+               document.body.appendChild(tempDiv)
+               
+               //adds data to console
+               console.log(item)
+           
+              
+               console.log(`${item.first},${item.last},${item.credit}`)
+           
+       })
+	
+</script>
+
+</body> 
+</html>
