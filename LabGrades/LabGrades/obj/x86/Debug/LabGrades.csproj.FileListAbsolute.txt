@@ -1,0 +1,7 @@
+C:\Users\me\Desktop\LabGrades\LabGrades\obj\x86\Debug\LabGrades.frmLab.resources
+C:\Users\me\Desktop\LabGrades\LabGrades\obj\x86\Debug\LabGrades.Properties.Resources.resources
+C:\Users\me\Desktop\LabGrades\LabGrades\obj\x86\Debug\LabGrades.csproj.GenerateResource.Cache
+C:\Users\me\Desktop\LabGrades\LabGrades\bin\Debug\LabGrades.exe
+C:\Users\me\Desktop\LabGrades\LabGrades\bin\Debug\LabGrades.pdb
+C:\Users\me\Desktop\LabGrades\LabGrades\obj\x86\Debug\LabGrades.exe
+C:\Users\me\Desktop\LabGrades\LabGrades\obj\x86\Debug\LabGrades.pdb
