@@ -14,15 +14,23 @@ and open the template in the editor.
         <div>Objects</div>
         
         <script>
+            let names = {}
             
-            let firstName = "Ivan";
-            let lastName = "Escalante";
-            let phoneNumber = "4010000000";
-            let color = "orange";
+            names.first = 'Ivan'
+            names.last = 'Escalante'
+            names.phone = '4010000000'
+            names.color = 'orange'
+          
+            //let personInfo = { firstName, lastName, phoneNumber, color};
             
-            let personInfo = { firstName, lastName, phoneNumber, color};
-            console.log(personInfo);
+            console.log(names)
+           
+            console.log(names.first);
+            console.log(names.last);
+            console.log(names.phone)
+            console.log(names.color)
             
+         
         </script>
     </body>
 </html>
