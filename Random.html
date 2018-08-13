@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>RANDOM GRID</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            .red{
+                background-color: red;
+            }
+            .blue{
+                background-color: blue;
+            }
+           
+        </style>
+    </head>
+    <body>
+    
+         <input type="text" id="myNo"/>
+         <button id="gridSize">Generate Grid</button>
+         <div> </div>
+         <div class ="average" > </div>
+         
+ 
+        <script type="text/javascript"> 
+        
+        let btn = document.getElementById('gridSize')
+        let str = ""
+        let plus = 0
+        
+        // the function with two paramrters
+         btn.addEventListener('click', function(){
+             //document.getElementById('result');
+             UserInput = parseInt(document.getElementById('myNo').value)
+           
+        
+           str = "<table border='1'>"
+            
+            //handles rows
+            for ( let i  = 0; i < UserInput; i++) {
+               // items[i] = []
+                str += "<tr>"
+                str += "</tr>"
+                
+                //handles columns
+               for ( let ii = 0; ii < UserInput; ii++) {   
+                  
+                //creates random numbers
+                let RadNums = Math.floor(Math.random() * 100) + 1
+                let newNumbers = [RadNums]
+                
+                
+                
+                if(RadNums % 3 === 0)
+                {
+                   //<td> at the start  
+                  str += '<td class="red">'  
+                }
+                
+                else if(RadNums % 2 === 0){
+                   
+                   
+                   str += '<td class="blue">'   
+                    
+                }
+                else
+                {
+                    
+                    str += '<td>'
+                }
+              
+                
+                 for (let p = 0; p < newNumbers.length; p++) {
+                    plus += newNumbers[p];
+ 
+                }
+                
+                 average = (plus /(UserInput * UserInput))
+                average = average.toFixed(2)
+                 //</td> at the end to close the boxes
+                  str += RadNums + "</td>"
+                } //end of  second loop  
+              
+            }//end of first loop 
+            
+             str += "</table>";
+              
+               
+            document.querySelector('div[class=average]').innerHTML = "Average is " + average
+            document.querySelector('div').innerHTML = str
+           
+        })  
+           
+        </script>
+        
+    </body>
+</html>
