@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    </head>
+    <body>
+    <div class="section"></div>
+        
+        <script>
+            
+             let myRequest = 'users.json'
+            
+            fetch(myRequest)
+            .then(function(response) {              
+                  return response.json()               
+            })
+                    .then(displayUsers)
+            
+            function displayUsers(json)
+            {
+                let div = document.querySelector('div')
+                let html = ''
+                
+                 html += '<table class="table is-hoverable">'
+                 html += '<tr> <th>User Name</th> <th>Email</th> <th>Registered</th> <th>Active</th> </tr>'
+                 //loop json data
+                 html += '<tr> <td>fidel</td> <td>Fidel@fidel.com</td> <td>Aug 2, 2019</td> <td>true</td></tr>'
+                 html += '</table>'
+                
+                
+                
+                div.innerHTML = html
+                
+                
+            }
+        </script>
+    </body>
+</html>
