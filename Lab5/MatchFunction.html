@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>MATCH</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+          
+        <input type="text" name="match" size="100" value="12345 fake st. Providence, RI ">
+        <button>Click</button>
+        <br>
+        <div class ="average" > </div>
+        <span>
+            <strong></strong>
+        </span>
+        <script>    
+        
+         let rex = /[0-9]{5}$/
+         let input = document.querySelector('input')
+         let btn = document.querySelector('button')
+         let span = document.querySelector('span') 
+         let str;
+        
+        btn.addEventListener('click',function(){
+            str = input.value.match(rex)
+             
+            if(input.value.match(rex))
+            {
+                
+                document.querySelector('div[class=average]').innerHTML = "ZipCode Found: " + str
+                
+            }
+            else
+            {
+                
+                document.querySelector('div[class=average]').innerHTML = "ZipCode Not Found"
+                
+                
+            }
+         
+         })
+         
+        
+        </script>
+       
+        
+    </body>
+</html>

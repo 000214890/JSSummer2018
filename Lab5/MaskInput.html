@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Mask Input</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input type="text"> 
+        <script>
+            
+            let rex = /([0-9]{3})([0-9]{2})([0-9]{4})/
+            let regx = /([^0-9]{1})/
+            let input =document.querySelector('input')
+            let userInput=''
+            
+             input.addEventListener('blur',function(){
+                userInput = input.value
+                input.value = input.value.replace(rex,'###-##-$3')
+               
+           })
+     
+             input.addEventListener('focus',function(){
+               
+                 
+                input.value = userInput
+                
+            })
+            
+            
+            
+        </script>
+        
+        
+        
+        
+    </body>
+</html>
