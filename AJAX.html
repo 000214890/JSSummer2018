@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    </head>
+    <body>
+    <div class="section"></div>
+        
+        <script>
+            
+             let myRequest = 'users.json'
+            
+            fetch(myRequest)
+            .then(function(response) {              
+                  return response.json()               
+            })
+                    .then(displayUsers)
+            
+            function displayUsers(json)
+            {
+               
+                let div = document.querySelector('div')
+                let formattedDate
+                let html = ''
+                data = json
+               
+                 html += '<table class="table is-hoverable">'
+                 html += '<tr> <th>User Name</th> <th>Email</th> <th>Registered</th> <th>Active</th> </tr>'
+                
+                
+                 for(let index in data)
+                 {  
+                   formattedDate = new Date(data[index].registered).toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+                 //html += `<tr><td>${data[index].username}</td><td><a href="${data[index].email}">${data[index].email}</td></a><td>${data[index].registered}</td><td>${data[index].isActive}</td></tr>`
+                 html += `<tr><td>${data[index].username}</td><td><a href="${data[index].email}">${data[index].email}</td></a><td>${formattedDate}</td><td>${data[index].isActive}</td></tr>`
+                }
+                 html += '</table>'  
+                 div.innerHTML = html 
+               
+                
+            }
+        </script>
+    </body>
+</html>
