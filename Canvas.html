@@ -1,35 +1,103 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>RED</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style type="text/css">
-            canvas 
-            {
-             border: 1px solid black;
+        <meta name="viewport" content="width=device-width">
+         <style type="text/css">
+            canvas {
+                border: 1px solid black;
             }
+           
         </style>
     </head>
     <body>
-        <canvas id="race" width="750" height="150"></canvas>
-        <br/>
-        <button id="play">Play</button>
-
+        <canvas id="Mycan" width="750" height="550"></canvas>
+         <br />
+         <button id="start">Play</button>
 
         <script type="text/javascript">
- 
-            function randNum(max) {
-                return Math.ceil(Math.random()*max) + 1;
+            
+           let play = document.querySelector('#start');
+            let can = document.querySelector('#Mycan');
+            let ctx = can.getContext('2d');
+            
+            
+            function drawClear(){
+                ctx.clearRect(0, 0, can.width, can.height); // x y / w h
+                
+            }
+            let width = 50,
+                height = 50,
+                xaxis = 0,
+                xaxis2 = 0,
+                yaxis = 50; 
+        
+            let canvasRight = (650);
+            
+              function moveX(){
+                  play.style.display = "none";
+               if ( xaxis < canvasRight && xaxis2 < canvasRight ) {
+                    drawClear();
+                   
+                    xaxis += radNum();
+                    xaxis2 += radNum();
+                    
+                    ctx.fillStyle = "blue";
+                    ctx.fillRect(xaxis, 50, width, height); // x y / w h
+                    drawLine();
+                    ctx.fillStyle ="red";
+                    ctx.fillRect(xaxis2, 200, width, height);
+                    setTimeout(moveX, 100);
+                    
                 }
+                
+              else{
+                   let winner = '';
+              
+                 if(xaxis > 650)   
+                 {
+                     ctx.fillStyle = "blue";
+                     winner = 'blue wins';
+                     
+                 }
+              
+              if(xaxis2 > 650)   
+                 {
+                     ctx.fillStyle = "red";
+                     winner = 'red wins';
+                 }
+                 
+                  reset();
+                 ctx.font = "16pt Helvetica";
+                  ctx.fillText(winner, (can.width / 2) - 100, can.height / 2);
+                  
+                   play.style.display = "block";
+              }
+               
+            }
+            addEventListener('load', moveX);
+            play.addEventListener('click', moveX);
+            
+            function drawLine(){
+                
+                 ctx.moveTo(700,0);
+                 ctx.lineTo(700,550);
+                 ctx.stroke();
+                
+            }
+            
+            function radNum(){
+                return Math.floor((Math.random() * 19) + 1);
+                
+            }
+        function reset(){
+            
+            xaxis = 0;
+            xaxis2 = 0;
+            yaxis = 0;
+        }
+         
         </script>
-        
-        
-        <div>TODO write content</div>
     </body>
 </html>
