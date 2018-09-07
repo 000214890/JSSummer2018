@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+         <style type="text/css">
+            canvas {
+                border: 1px solid black;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <canvas id="Mycan" width="750" height="550"></canvas>
+         <br />
+         <button id="start">Play</button>
+
+        <script type="text/javascript">
+            
+           let play = document.querySelector('#start');
+            let can = document.querySelector('#Mycan');
+            let ctx = can.getContext('2d');
+            let ctx2 = can.getContext('2d');
+            
+            function drawClear(){
+                ctx.clearRect(0, 0, can.width, can.height); // x y / w h
+                ctx2.clearRect(0, 0, can.width, can.height);
+            }
+            let width = 50,
+                height = 50,
+                xaxis = 0,
+                xaxis2 = 0,
+                yaxis = 50; 
+        
+            
+            let canvasRight = ( can.width - width);
+            let canvasRight2 = ( can.width - width);
+             
+               
+        
+              function moveX(){
+                  drawLine();
+               if ( xaxis < canvasRight ) {
+                    drawClear();
+                    ctx.fillStyle = "blue";
+                    xaxis += radNum();
+                    xaxis2 += radNum();
+                    ctx.fillRect(xaxis, 50, width, height); // x y / w h
+                    ctx2.fillStyle ="red";
+                    ctx2.fillRect(xaxis2, 200, width, height);
+                    setTimeout(moveX, 100);
+                }
+                
+              else{
+                  reset();
+              }
+                    
+                
+              
+            }
+            addEventListener('load', moveX);
+            play.addEventListener('click', moveX);
+            
+            function drawLine(){
+                 ctx.moveTo(700,0);
+                 ctx.lineTo(700,550);
+                 ctx.stroke();
+                
+            }
+            
+            function radNum(){
+                return Math.floor((Math.random() * 15) + 1);
+                
+            }
+        function reset(){
+            
+            xaxis = 0;
+            xaxis2 = 0;
+            yaxis = 0;
+        }
+        
+            
+        </script>
+    </body>
+</html>
